@@ -258,7 +258,7 @@ class OrganizationPublicSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Organization
-        fields = ["id", "datasets", "slug", "name_en", "name_pt", "website"]
+        fields = ["id", "datasets", "slug", "name_en", "name_pt", "website", "name2", "name2_en", "name2_pt_br", "slug2"]
 
 
 class OrganizationSerializer(OrganizationPublicSerializer):

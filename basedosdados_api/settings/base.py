@@ -35,6 +35,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 # Application definition
 
 INSTALLED_APPS = [
+    "modeltranslation",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -192,3 +193,14 @@ SWAGGER_SETTINGS = {
         "Bearer": {"type": "apiKey", "name": "Authorization", "in": "header"}
     }
 }
+
+# Model Translation
+LANGUAGES = (
+    ('pt-br', 'Brazilian Portuguese'),
+    ('en', 'English'),
+)
+MODELTRANSLATION_LANGUAGES = ('pt-br', 'en')
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'pt-br'
+MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'pt-br'
+MODELTRANSLATION_AUTO_POPULATE = True

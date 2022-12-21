@@ -9,6 +9,8 @@ from basedosdados_api.api.v1.utils import (
     check_snake_case,
 )
 
+from autoslug import AutoSlugField
+
 
 class Organization(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4)
@@ -18,6 +20,8 @@ class Organization(models.Model):
     slug = models.SlugField(unique=True)
     name_en = models.CharField(max_length=255)
     name_pt = models.CharField(max_length=255)
+    name2 = models.CharField("Nome2", max_length=255, blank=True)
+    slug2 = AutoSlugField("Slug2", populate_from='name2', always_update=False, unique=True, blank=True)
     website = models.URLField(blank=True, null=True)
 
     def __str__(self):
